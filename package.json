@@ -1,0 +1,13 @@
+{
+  "name": "sublime-tag",
+  "version": "0.1.0",
+  "author": "Cris Ward",
+  "description": "Riot Tag Syntax Highlighting",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crisward/sublime-tag.git"
+  },
+  "license": "Apache 2.0"
+}
