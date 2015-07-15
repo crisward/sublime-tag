@@ -15,6 +15,39 @@ With this plugin you can use
 This will then have correct syntax highlighting.
 
 
+### Jade Support
+
+I've been messing a little with the jade support in riot, again having syntax
+issues when combining with coffeescript. Jade can compile the coffeescript itself
+but I had a few issues with this. To use the jade support follow the same
+instructions below, but selet Riot(Jade) as the syntax.
+
+```jade
+yourtag
+  p hello world
+
+  script(type="text/coffeescript").
+    # your coffee script here
+
+```
+
+You'll then need to make sure your riotify settings are correct in your
+package.json file
+
+```json
+{
+  "scripts": {
+    "watch": "watchify src/app.coffee -o build/app.js"
+  },
+  "browserify": {
+    "transform": [
+      ["riotify",{"expr": false,"type": "coffee","template": "jade"}]
+    ]
+  }
+}
+
+```
+
 
 ## Installation
 
