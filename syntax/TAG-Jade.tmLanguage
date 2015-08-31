@@ -131,7 +131,7 @@
     </dict>
     <dict>
       <key>begin</key>
-      <string>^(\s*)(\:coffee-script|script\(type='text\/coffeescript'\)\.)</string>
+      <string>^(\s*)(\:coffee-script|script\(type=['"]text\/coffeescript['"]\)\.)</string>
       <key>beginCaptures</key>
       <dict>
         <key>1</key>
