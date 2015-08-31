@@ -1,6 +1,6 @@
 # sublime-tag
 
-Sublime syntax highlighting for Riot JS TAG files.
+Sublime syntax highlighting for [Riot JS](https://github.com/riot/riot/) TAG files.
 Witin sublime you can use HTML, but this doesn't work well with coffeescript.
 
 With this plugin you can use

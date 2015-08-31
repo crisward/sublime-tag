@@ -129,29 +129,45 @@
         </dict>
       </array>
     </dict>
+    
     <dict>
       <key>begin</key>
-      <string>^(\s*)(\:coffee-script|script\(type=['"]text\/coffeescript['"]\)\.)</string>
+      <string>^(\s*)(script)(?=\(type=["']text\/coffee(script)?['"]\)\.)</string>
       <key>beginCaptures</key>
       <dict>
-        <key>1</key>
+        <key>2</key>
         <dict>
           <key>name</key>
-          <string>entity.name.function.jade</string>
+          <string>entity.name.tag.coffee.jade</string>
         </dict>
       </dict>
       <key>end</key>
-      <string>^(?!\1\s+)(?=\s*.)</string>
+      <string>^(type=["']text\/coffee(script)?['"]\)\.)</string>
       <key>name</key>
-      <string>meta.filter.coffee.jade</string>
+      <string>source.coffee.embedded.jade</string>
       <key>patterns</key>
       <array>
+        <dict>
+          <key>begin</key>
+          <string>(?&lt;=script)\s*\(</string>
+          <key>end</key>
+          <string>\).</string>
+          <key>patterns</key>
+          <array>
+            <dict>
+              <key>include</key>
+              <string>#tag-stuff</string>
+            </dict>
+          </array>
+        </dict>
         <dict>
           <key>include</key>
           <string>source.coffee</string>
         </dict>
       </array>
     </dict>
+
+
     <dict>
       <key>begin</key>
       <string>^(\s*)(\:cdata)</string>
@@ -246,6 +262,7 @@
         </dict>
       </array>
     </dict>
+    
     <dict>
       <key>begin</key>
       <string>^(\s*)(script)</string>
@@ -282,6 +299,7 @@
         </dict>
       </array>
     </dict>
+
     <dict>
       <key>match</key>
       <string>[#!]\{[^\}]+\}</string>
