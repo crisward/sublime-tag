@@ -132,7 +132,7 @@
     
     <dict>
       <key>begin</key>
-      <string>^(\s*)(script)(?=\(type=["']text\/coffee(script)?['"]\)\.)</string>
+      <string>^(\s*)(script)(?=\(type=["'](text\/)?coffee(script)?['"]\)\.)</string>
       <key>beginCaptures</key>
       <dict>
         <key>2</key>
@@ -264,19 +264,19 @@
     </dict>
  
     <dict>
-      <key>begin</key>
-      <string>^(\s*)(style)(?=\(type=["']text\/stylus['"][^)]*\)\.)</string>
-      <key>beginCaptures</key>
-      <dict>
-        <key>2</key>
-        <dict>
-          <key>name</key>
-          <string>entity.name.tag.stylus.jade</string>
-        </dict>
-      </dict>
-      <key>end</key>
-      <string>^(?!(\1\s)|\s*$)</string>
-      <key>patterns</key>
+			<key>begin</key>
+      <string>^(\s*)(style)(?=\(type=["'](text\/)?stylus['"][^)]*\)\.)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.stylus.jade</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>^(?!(\1\s)|\s*$)</string>
+			<key>patterns</key>
       <array>
         <dict>
           <key>begin</key>
@@ -299,60 +299,60 @@
     </dict>
  
     <dict>
-      <key>begin</key>
-      <string>^(\s*)(style)((\.$)|(?=[.#(].*\.$))</string>
-      <key>beginCaptures</key>
-      <dict>
-        <key>2</key>
-        <dict>
-          <key>name</key>
-          <string>entity.name.tag.script.jade</string>
-        </dict>
-      </dict>
-      <key>comment</key>
-      <string>Style tag with CSS code.</string>
-      <key>end</key>
-      <string>^(?!(\1\s)|\s*$)</string>
-      <key>name</key>
-      <string>meta.tag.other</string>
-      <key>patterns</key>
-      <array>
-        <dict>
-          <key>begin</key>
-          <string>\G(?=\()</string>
-          <key>end</key>
-          <string>$</string>
-          <key>name</key>
-          <string>stuff.tag.style.jade</string>
-          <key>patterns</key>
-          <array>
-            <dict>
-              <key>include</key>
-              <string>#tag_attributes</string>
-            </dict>
-          </array>
-        </dict>
-        <dict>
-          <key>begin</key>
-          <string>\G(?=[.#])</string>
-          <key>end</key>
-          <string>$</string>
-          <key>name</key>
-          <string>stuff.tag.style.jade</string>
-          <key>patterns</key>
-          <array>
-            <dict>
-              <key>include</key>
-              <string>#complete_tag</string>
-            </dict>
-          </array>
-        </dict>
-        <dict>
-          <key>include</key>
-          <string>source.css</string>
-        </dict>
-      </array>
-    </dict>
+			<key>begin</key>
+			<string>^(\s*)(style)((\.$)|(?=[.#(].*\.$))</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.script.jade</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Style tag with CSS code.</string>
+			<key>end</key>
+			<string>^(?!(\1\s)|\s*$)</string>
+			<key>name</key>
+			<string>meta.tag.other</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>\G(?=\()</string>
+					<key>end</key>
+					<string>$</string>
+					<key>name</key>
+					<string>stuff.tag.style.jade</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#tag_attributes</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\G(?=[.#])</string>
+					<key>end</key>
+					<string>$</string>
+					<key>name</key>
+					<string>stuff.tag.style.jade</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#complete_tag</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>source.css</string>
+				</dict>
+			</array>
+		</dict>
     
 
  
@@ -594,7 +594,7 @@
     <key>tag-generic-attribute</key>
     <dict>
       <key>match</key>
-      <string>\b([a-zA-Z\-:]+)</string>
+      <string>\b([a-zA-Z\-:_]+)</string>
       <key>name</key>
       <string>entity.other.attribute-name.jade</string>
     </dict>
